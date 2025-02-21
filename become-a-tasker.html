@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title>Jobhub - become-a-tasker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords"
+      content="Jobhub, Buy2Jobhub, services, domestic cleaning, cleaning services, delivery services," />
+    <meta name="description"
+      content="Jobhub is an online service platform that connects service providers with customers. It allows customers to browse and search for services, compare prices and reviews, and book appointments or purchase services directly from the site." />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- css stylesheets -->
+    <link rel="icon" type="image/x-icon" href="local/images/settings/1673612010.png" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/carousel/style.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--
+	<link rel="stylesheet" href="/css/validationEngine.jquery.css" type="text/css"/>
+	
+	<script src="/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery("#formID").validationEngine({showOneMessage:true,promptPosition : "topLeft", scroll: false});
+		});
+
+		jQuery(document).ready(function(){
+			jQuery("#formID2").validationEngine({showOneMessage:true,promptPosition : "topLeft", scroll: false});
+		});
+	</script>-->
+
+    <link href="css/autocomplete.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery-1.10.4.min.js"></script>
+
+    <link href="css/jquery.multiselect.css" rel="stylesheet" type="text/css">
+
+    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css">
+
+
+    <link rel="stylesheet" href="css/jquery-uii.css">
+
+    <link rel="stylesheet" href="css/multiselect/fastselect.min.css">
+
+    <script src="css/multiselect/fastselect.standalone.js"></script>
+
+    <link href="local/resources/assets/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="pagenavi/style.css" />
+
+
+    <script type="text/javascript" src="pagenavi/jquery.simplePagination.js"></script>
+
+    <script type="text/javascript" src="local/resources/assets/DataTables/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+
+    <style>
+      :root {
+        --primary-color: #0D7A5F;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $(function () {
+        var perPage = 3;
+        var opened = 1;
+        var onClass = 'on';
+        var paginationSelector = '.pagee';
+        var defaultSorting = 'ASC';
+        $('.pagenavigation').simplePagination(perPage, opened, onClass, paginationSelector);
+      });
+
+
+
+
+      $(function () {
+        $("#completed_work").change(function () {
+          if ($(this).val() == "yes") {
+            $("#gotted_prb").hide();
+          } else {
+            $("#gotted_prb").show();
+
+          }
+        });
+      });
+
+
+      $(function () {
+        $("#got_problem").change(function () {
+          if ($(this).val() == "yes") {
+            $("#problemcard").show();
+            $("#complete_wrk").hide();
+          } else {
+            $("#problemcard").hide();
+            $("#support-message").hide();
+            $("#complete_wrk").show();
+          }
+        });
+      });
+
+
+
+      $(function () {
+        $("input[name='reason']").click(function () {
+          if ($("#get_help").is(":checked")) {
+            $("#support-message").show();
+            $("#complete_wrk").hide();
+          } else {
+            $("#support-message").hide();
+            $("#complete_wrk").hide();
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript"
+      src='https://maps.google.com/maps/api/js?key=AIzaSyCxsElDokvMkgQAwkQabkhKiytZJO-hIoM&sensor=false&libraries=places'>
+    </script>
+    <script type="text/javascript">
+      google.maps.event.addDomListener(window, 'load', function () {
+        var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+        google.maps.event.addListener(places, 'place_changed', function () {
+          var place = places.getPlace();
+          var address = place.formatted_address;
+          var latitude = place.geometry.location.lat();
+          var longitude = place.geometry.location.lng();
+
+        });
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/become-tasker.css" />
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+    <link rel="stylesheet" type="text/css" href="css/build.css">
+    <script type="text/javascript" src="js/jquery.cookie.min.js"></script><!-- language -->
+
+  </head>
+
+  <body class="become_tasker">
+
+
+    <!-- fixed navigation bar -->
+    <div class="navbar sticky migrateshop_othernav navbar-inverse" role="navigation" align="center">
+      <div class="container topbottom">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#b-menu-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="" href="../buy2jobhub.1.html">
+
+            <img src="local/images/settings/1673520176.png.html" border="0" alt="" />
+
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="b-menu-1">
+
+
+          <ul class="nav navbar-nav navbar-right sangvish_otherpage">
+            <!--<li class="active"><a href="#">Join as a pro</a></li>-->
+
+            <!--<li class="nav-font"><a href="#location">Location</a></li>-->
+            <li class="dropdown"><a href="become-a-tasker.html#" class="dropdown-toggle" data-toggle="dropdown">All
+                Services<span><i class="fa fa-caret-down dropdown-submenu" aria-hidden="true"
+                    style="text-align:center; padding:0 5px"></i></span></a>
+              <ul class="dropdown-menu dropdown-menuser">
+                <div class="dropdownmenu_scroll">
+
+                  <li><a href="search/15/carpentry-&amp;-construction.html">Carpentry & Construction</a></li>
+
+                  <li><a href="search/4/cleaning.html">Cleaning</a></li>
+
+                  <li><a href="search/23/computer-help.html">Computer Help</a></li>
+
+                  <li><a href="search/28/decoration-help.html">Decoration Help</a></li>
+
+                  <li><a href="search/20/deep-clean.html">Deep Clean</a></li>
+
+                  <li><a href="search/7/delivery.html">Delivery</a></li>
+
+                  <li><a href="search/8/electrical-help.html">Electrical Help</a></li>
+
+                  <li><a href="search/19/event-staffing.html">Event Staffing</a></li>
+
+                  <li><a href="search/21/full-service-help-moving.html">Full Service Help Moving</a></li>
+
+                  <li><a href="search/1/furniture-assembly.html">Furniture Assembly</a></li>
+
+                  <li><a href="search/18/furniture-removal.html">Furniture Removal</a></li>
+
+                  <li><a href="search/3/help-moving.html">Help Moving</a></li>
+
+                  <li><a href="search/5/home-repairs.html">Home Repairs</a></li>
+
+                  <li><a href="search/29/interior-design-service.html">Interior Design Service</a></li>
+
+                  <li><a href="search/25/laundry-help.html">Laundry Help</a></li>
+
+                  <li><a href="search/2/mounting.html">Mounting</a></li>
+
+                  <li><a href="search/9/moving-heavy-furniture-service.html">Moving Heavy Furniture Service</a></li>
+
+                  <li><a href="search/31/office-administration.html">Office Administration</a></li>
+
+                  <li><a href="search/16/organization.html">Organization</a></li>
+
+                  <li><a href="search/14/packing-&amp;-unpacking.html">Packing & Unpacking</a></li>
+
+                  <li><a href="search/12/painting.html">Painting</a></li>
+
+                  <li><a href="search/17/personal-assistant.html">Personal Assistant</a></li>
+
+                  <li><a href="search/26/photography.html">Photography</a></li>
+
+                  <li><a href="search/11/plumbing.html">Plumbing</a></li>
+
+                  <li><a href="search/30/pressure-washing.html">Pressure Washing</a></li>
+
+                  <li><a href="search/13/running-your-errands.html">Running Your Errands</a></li>
+
+                  <li><a href="search/22/shopping.html">Shopping</a></li>
+
+                  <li><a href="search/27/smart-home-installation.html">Smart Home Installation</a></li>
+
+                  <li><a href="search/24/wait-in-line.html">Wait in Line</a></li>
+
+                  <li><a href="search/10/yard-work-services.html">Yard Work Services</a></li>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-font"><a href="account_create.html">Sign up / Login</a></li>
+
+
+            <li class="dropdown ">
+              <a href="become-a-tasker.html#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"
+                  aria-hidden="true" style="font-size: 20px;"></i><span><i class="fa fa-caret-down dropdown-submenu"
+                    aria-hidden="true" style="text-align:center; padding:0 5px;"></i></span></a>
+              <ul class="dropdown-menu dropdown-menu1">
+
+                <li><a href="become-a-tasker.html" value="en" class="language_value"> English</a></li>
+                <li><a href="become-a-tasker.html" value="es" class="language_value"> Spanish</a></li>
+                <li><a href="become-a-tasker.html" value="ar" class="language_value"> Arabic</a></li>
+
+
+              </ul>
+            </li>
+
+            <!--<li class="dropdown nav-font">
+          		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Language</a>
+              	<ul class="dropdown-menu">
+              								<li><a href="" value="en" class="language_value"> English</a></li>
+											<li><a href="" value="es" class="language_value"> Spanish</a></li>
+											<li><a href="" value="ar" class="language_value"> Arabic</a></li>
+										
+              	</ul>
+            </li>-->
+            <li class="nav-font">
+              <a class="btn btn-small btn-secondary u-hidden--sm u-hidden--md tasker-signup-btn"
+                href="become-a-tasker.html"><span class="nav-btn-font">Become a Tasker</span>
+              </a>
+            </li>
+
+            <!--<li><a href="/new-request"  class="borbtn">Post a Job</a></li>-->
+          </ul>
+        </div> <!-- /.nav-collapse -->
+      </div> <!-- /.container -->
+    </div> <!-- /.navbar -->
+
+    <script>
+      $(document).ready(function () {
+        $('.dropdown-submenu a.test').on("click", function (e) {
+          $(this).next('ul').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
+      });
+    </script>
+
+
+
+    <!-- Mobile menu start here -->
+    <header class="sv_mob_menu">
+      <div id="mySidenav" class="sidenav ">
+        <div class="header_part">
+          <span class="sv_menu_title">Jobhub</span>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+
+
+        <a href="register.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sign Up</a>
+        <a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+
+        <li class="dropdown">
+          <a href="become-a-tasker.html#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-globe"
+              aria-hidden="true"></i>Language <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu sv_sub_menu">
+            <li><a href="become-a-tasker.html" value="en" class="language_value">English</a></li>
+            <li><a href="become-a-tasker.html" value="es" class="language_value">Spanish</a></li>
+            <li><a href="become-a-tasker.html" value="ar" class="language_value">Arabic</a></li>
+          </ul>
+        </li>
+        <a href="become-a-tasker.html"><i class="fa fa-user-o" aria-hidden="true"></i>Become a Tasker</a>
+
+        <!--<a href="/new-request"  class="borbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Post a Job</a>-->
+
+
+      </div>
+
+
+      <div class="col-md-12">
+
+        <div class="col-md-3" style="float: left;padding-left: 0px;padding-top:0.5em "><span
+            style="font-size:30px;cursor:pointer;color:var(--primary-color)" onclick="openNav()">&#9776;</span></div>
+
+        <div class="col-md-7" style="float:left;margin:0 auto;padding-left: 0px;padding-top:0.5em">
+
+          <a class="" href="../buy2jobhub.1.html">
+
+            <img src="local/images/settings/1673520176.png.html" border="0" alt=""
+              style="display: block;margin-left: auto;margin-right: auto;" />
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <script type="text/javascript">
+        function openNav() {
+          alert("das");
+
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+      </script>
+    </header>
+
+    <script>
+      // Hide Header on on scroll down
+      /*var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $('header').outerHeight();
+
+      $(window).scroll(function(event){
+          didScroll = true;
+      });
+
+      setInterval(function() {
+          if (didScroll) {
+              hasScrolled();
+              didScroll = false;
+          }
+      }, 250); */
+
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        // Make sure they scroll more than delta
+        if (Math.abs(lastScrollTop - st) <= delta)
+          return;
+
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight) {
+          // Scroll Down
+          $('header').removeClass('nav-down').addClass('nav-up');
+        } else {
+          // Scroll Up
+          if (st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+          }
+        }
+
+        lastScrollTop = st;
+      }
+    </script>
+
+    <script>
+      $(window).scroll(function () {
+        var sticky = $('.sticky'),
+          scroll = $(window).scrollTop();
+
+        if (scroll >= 100) sticky.addClass('fixed');
+        else sticky.removeClass('fixed');
+      });
+
+      $(".alert-danger").show();
+      setTimeout(function () {
+        $(".alert-danger").hide();
+      }, 5000);
+
+      $(".alert-success").show();
+      setTimeout(function () {
+        $(".alert-success").hide();
+      }, 3000);
+    </script>
+
+    <!--<script type="text/javascript">
+	$(document).ready(function(){  
+	  	var rtl_arabic=$.cookie('language');
+	  	if (rtl_arabic == "ar" ){
+	  		$("body").addClass("rtl_arabic");
+
+	  		$(".rtl_arabic").attr("dir", "rtl");
+	  	} 
+	  	else{
+	  		$("body").removeClass("rtl_arabic");
+	  	}
+ 	}); 
+
+
+
+</script>-->
+    <style>
+      .dropdownmenu_scroll {
+
+        height: 500px;
+        overflow-y: scroll;
+        min-width: 210px;
+      }
+
+      .dropdownmenu_scroll>li>a {
+        display: block;
+        padding: 8px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.428571429;
+        color: #333;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      .dropdownmenu_scroll>li>a:hover,
+      .dropdownmenu_scroll>li>a:focus {
+        color: var(--primary-color);
+      }
+
+      .dropdownmenu_scroll>li>a:hover,
+      .dropdownmenu_scroll>li>a:focus {
+        color: var(--primary-color);
+        text-decoration: none;
+        background-color: #f5f5f5
+      }
+    </style>
+    <!-- slider -->
+    <style type="text/css">
+      .row [class^="col-"],
+      .row [class*=" col-"],
+      .row [class^="tr-col-"],
+      .row [class*=" tr-col-"] {
+
+        float: left;
+      }
+    </style>
+
+
+    <div id="root">
+      <img class="hero__header-image u-hidden--lg u-padding-bottom-small" src="img/hero_landing.jpg"
+        alt="Person sitting on ladder after doing a painting task">
+      <div class="container--wide" id="become-a-tasker">
+        <div class="row hero__container tasker_landing__no-padding">
+          <div class="col-12 col-lg-8">
+            <img class="hero__header-image u-hidden--sm u-hidden--md" src="img/hero_landing.jpg"
+              alt="Person sitting on ladder after doing a painting task"></div>
+          <div class="col-12 col-lg-4">
+            <div class="row">
+              <h1 class="title-2 u-padding-bottom-small" style="padding-bottom: 0px; margin-bottom: 0px;"><span>Making
+                  money your way</span></h1>
+              <div><small class="regular-style">
+                  <span>Check your earning potential on Jobhub</span></small>
+                <!--<div class="regular-style">
+								<span>tasking on Jobhub</span></div>-->
+              </div>
+              <form name="sellerreg" id="sellerreg" method="get" action="tasker_register.php">
+                <input type="hidden" name="_token" value="ZuHXf7fuFYJUznBz4sG6CSmUbhRwCLcB0ff8Njp6">
+                <div class="sb-container--input u-padding-top-small u-padding-bottom-normal regular-style-bold">
+
+
+                  <h4><label for="react-select-2-input"><span>Select your Country</span></label></h4>
+
+                  <select name="country" id="available_country" style="width:100%">
+
+
+                    <option value="">Country</option>
+
+
+                    <option value="India">India</option>
+
+                    <option value="Kuwait">Kuwait</option>
+
+                    <option value="USA">USA</option>
+
+                  </select>
+
+                  <!-- 
+                  <div class="u-padding-top-normal">
+                    <h4><label for="react-select-3-input"><span>Select your State</span></label></h4>
+
+                    <select name="state" id="state" style="width:100%">
+
+
+                      <option value="">State</option>
+
+
+                    </select>
+
+
+
+
+                  </div> -->
+
+                  <div class="u-padding-top-normal">
+                    <h4><label for="react-select-3-input"><span>Select your Category</span></label></h4>
+
+                    <select name="jobrole" id="service" style="width:100%">
+
+
+                      <option value="">Category</option>
+
+
+                      <option value="1">Furniture Assembly</option>
+
+
+                      <option value="2">Mounting</option>
+
+
+                      <option value="3">Help Moving</option>
+
+
+                      <option value="4">Cleaning</option>
+
+
+                      <option value="5">Home Repairs</option>
+
+
+                      <option value="7">Delivery</option>
+
+
+                      <option value="8">Electrical Help</option>
+
+
+                      <option value="9">Moving Heavy Furniture Service</option>
+
+
+                      <option value="10">Yard Work Services</option>
+
+
+                      <option value="11">Plumbing</option>
+
+
+                      <option value="12">Painting</option>
+
+
+                      <option value="13">Running Your Errands</option>
+
+
+                      <option value="14">Packing & Unpacking</option>
+
+
+                      <option value="15">Carpentry & Construction</option>
+
+
+                      <option value="16">Organization</option>
+
+
+                      <option value="17">Personal Assistant</option>
+
+
+                      <option value="18">Furniture Removal</option>
+
+
+                      <option value="19">Event Staffing</option>
+
+
+                      <option value="20">Deep Clean</option>
+
+
+                      <option value="21">Full Service Help Moving</option>
+
+
+                      <option value="22">Shopping</option>
+
+
+                      <option value="23">Computer Help</option>
+
+
+                      <option value="24">Wait in Line</option>
+
+
+                      <option value="25">Laundry Help</option>
+
+
+                      <option value="26">Photography</option>
+
+
+                      <option value="27">Smart Home Installation</option>
+
+
+                      <option value="28">Decoration Help</option>
+
+
+                      <option value="29">Interior Design Service</option>
+
+
+                      <option value="30">Pressure Washing</option>
+
+
+                      <option value="31">Office Administration</option>
+
+
+
+                    </select>
+
+
+                  </div>
+
+
+
+
+                  <!--<div class="u-padding-top-normal"><h4><label for="react-select-3-input"><span>Service Per Hour Rate</span></label></h4>
+
+												 <input type="text" name="price" id="price" style="width:100%">
+
+											
+											</div>-->
+
+
+
+                </div>
+
+
+                <div class="u-padding-top-normal">
+
+                  <button id="set_signup_modal" class="btn btn-primary btn--md u-full-width" type="submit"
+                    tabindex="0"><span class="regular-style-bold"><span>Get started</span></span></button>
+                </div>
+              </form>
+              <div class="u-align--center u-padding-top-normal"><span class="regular-style"><span>Already have an
+                    account?</span></span><a href="login.php"><button type="button"
+                    class="regular-style hero__sign-in link" id="hero_log_in" tabindex="0"><span>Sign
+                      in</span></button></a></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="flexible-work">
+          <div class="tasker_landing_container">
+            <div class="row tasker_landing__no-padding u-padding-top-large align_self" style="left:35%">
+              <!-- <hr class="u-hidden--md u-hidden--sm col-offset-5"> -->
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+              <hr class="tasker_landing__dot col-1">
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+            </div>
+            <div class="row u-padding-top-semi tasker_landing__no-padding">
+              <h2 class="tasker_landing__flexible-header u-padding-bottom-small title-2"><span>Versatile Work at your
+                  Fingertips</span></h2>
+              <div class="row tasker_landing__no-padding">
+                <div class="tasker_landing__flexible-header regular-style"><span>Look for local jobs that suit your
+                    availability and skill set. You can be your own employer with Jobhub's help and flexibility.</span>
+                </div>
+              </div>
+              <div class="row u-padding-top-large tasker_landing__no-padding tasker_landing__mobile-semi-padding">
+                <div class="col-lg-4 tasker_landing__flexible-padding"><img src="img/boss.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal"><span>Make your own Decisions</span>
+                  </h3>
+                  <div class="regular-style"><span>Work whenever, wherever, and however you like. Provide 30+ services ,
+                      with a flexible schedule and work environment.</span></div>
+                </div>
+                <div class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/set your price.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal"><span>Set your own Prices</span></h3>
+                  <div class="regular-style"><span>You keep 100% of your fees, including tips! Use our safe payment
+                      system to invoice and receive payment right away.</span></div>
+                </div>
+                <div class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/growth&#32;your&#32;own&#32;business.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal"><span>Expand your business</span></h3>
+                  <div class="regular-style"><span>We help you find local clients and self-promotional opportunities so
+                      you can concentrate on what you do best.</span></div>
+                </div>
+              </div>
+
+              <div class="u-padding-top-large tasker_landing__mobile-semi-padding">
+                <meta name="description" content="What is Jobhub?">
+                <div class="col-12 col-lg-7">
+                  <img class="hero__header-image" src="img/group-61.jpg" alt="What is Jobhub?">
+
+                </div>
+                <div class="col-12 col-lg-5 hero__small-normal-padding">
+                  <h2 class="title-2"><span>What is Jobhub?</span></h2>
+                  <p class="regular-style u-padding-top-normal"><span> Jobhub connects time-pressed folks in search of
+                      support with dependable neighborhood Taskers who can assist with anything from home repairs to
+                      errands. You may be paid to do whatever you love, whenever and where you choose, as a Tasker, all
+                      while boosting someone's day in your city.</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="getting-started" class="tasker_landing__no-padding">
+          <div class="getting-started-container">
+            <div class="row u-padding-top-large align_self" style="left:35%">
+              <!-- <hr class="u-hidden--md u-hidden--sm col-offset-5"> -->
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+              <hr class="tasker_landing__dot col-1">
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+            </div>
+            <div class="row u-padding-top-semi">
+              <h2 class="tasker_landing__flexible-header title-2 u-padding-bottom-large">
+                <span>How to Begin</span></h2>
+              <div class="row">
+                <div id="getting_started_sign_up" class="col-lg-4 tasker_landing__flexible-padding ">
+                  <img src="img/sign-up.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">1. <span>Sign up</span></h3>
+                  <div class="regular-style"><span>Set up an account. The Tasker app can then be downloaded to complete
+                      registration.</span></div>
+                </div>
+                <div id="getting_started_profile"
+                  class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/bulid_profile.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">2. <span>Build your profile</span>
+                  </h3>
+                  <div class="regular-style"><span>Choose the locations where you want to offer your services.</span>
+                  </div>
+                </div>
+                <div id="getting_started_eligibility"
+                  class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/eligiblity.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">3. <span>Check your eligibility for
+                      the Task</span></h3>
+                  <div class="regular-style"><span>Verify your identity and provide any necessary business
+                      verifications.</span></div>
+                </div>
+              </div>
+              <div class="u-padding-top-semi u-hidden--md u-hidden--sm"></div>
+              <div class="row">
+                <div id="pay_registration_fee"
+                  class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/registration.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">4. <span>Pay the registration
+                      fee</span></h3>
+                  <div class="regular-style"><span>In eligible cities, we charge a $25 registering fee to assist us to
+                      provide you with the best service possible.5. Plan your working schedule and workspace.</span>
+                  </div>
+                </div>
+                <div id="getting_started_schedule"
+                  class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/workspace.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">5. <span>Plan your work schedule and
+                      workspace</span></h3>
+                  <div class="regular-style"><span>Choose to receive same-day jobs and choose your weekly
+                      availability.</span></div>
+                </div>
+                <div id="getting_started_getting_jobs"
+                  class="col-lg-4 tasker_landing__flexible-padding tasker_landing__mobile-normal-padding"><img
+                    src="img/job-search.png" alt="" height="50">
+                  <h3 class="title-3 u-padding-top-small u-padding-bottom-normal">6. <span>Start looking for jobs</span>
+                  </h3>
+                  <div class="regular-style"><span>Expand your business at your own pace.</span></div>
+                </div>
+              </div>
+              <div class="u-padding-top-large tasker_landing__mobile-semi-padding">
+                <meta name="description" content="tasker testimonial">
+
+                <div class="col-12 col-lg-5 u-hidden--sm u-hidden--md u-padding-top-large"><img src="img/quote.svg"
+                    class="u-padding-bottom-tiny" alt="tasker testimonial" height="50">
+
+                  <div class="title-3-unbolded u-padding-bottom-small"><span>I enjoy Jobhub. I was able to pay off my
+                      debt, handle my payments, take care of my family, and yet have money left over to invest for my
+                      future objectives.</span></div>
+                  <div class="regular-style">Karsheem W., New York, NY</div>
+
+                </div>
+
+                <div class="col-12 col-lg-7 u-align--right"><img class="hero__header-image" alt="tasker testimonial"
+                    src="img/testimonial1.webp">
+
+
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div id="faq-section">
+          <div class="container">
+            <div class="row tasker_landing__no-padding u-padding-top-large align_self" style="left:35%">
+              <!-- <hr class="u-hidden--md u-hidden--sm col-offset-5"> -->
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+              <hr class="tasker_landing__dot col-1">
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+            </div>
+
+
+            <div class="u-padding-top-semi">
+              <h2 class="title-1 tasker_landing__flexible-header">
+                <span>Your questions, answered</span></h2>
+
+              <div class="accordion" id="accordionExample">
+
+
+
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne1">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">What steps must I take to
+                          become a Tasker?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        The following requirements must be satisfied in order for you to become a Tasker:Able to get
+                        employment in one of our bustling cities. A complete list of cities is available here.Accept a
+                        photo ID check. This maintains the security of our site for all users.A checking account with a
+                        bank or other financial institution. You will be compensated using the platform in this
+                        manner.Possess a smartphone Our Tasker app, available for iOS or Android, will be how you manage
+                        your tasks.A genuine Social Security number from the United StatesPay one-time, non-refundable
+                        registration fee in the relevant cities. This enables us to offer the Tasker community the best
+                        service possible. </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne2">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">Does the task require
+                          experience?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne2"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        The task categories and the skills you employ are entirely
+                        up to you. </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne3">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">How can I find jobs?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne3" class="collapse show" aria-labelledby="headingOne3"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        Make sure to map out your work location and specify schedule
+                        availability after completing the registration process, which includes creating
+                        your Tasker profile, so that it appears in Client search results. If you aren't
+                        receiving task invitations, think about changing your pricing, your working
+                        environment, and your availability, adding more categories, and updating your
+                        profile information to make sure that clients can easily understand the
+                        services you provide. </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne4">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">How can I be paid?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne4" class="collapse show" aria-labelledby="headingOne4"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+
+
+                        You must enter your bank account details and billing address
+                        when registering for the app to receive payments. Even if they permit direct
+                        deposits, savings accounts, prepaid debit cards, and re-loadable bank cards are
+                        not recognized. We utilize the most recent encryption technology since we take
+                        the security of your personal information seriously. Your information is only
+                        used internally and will never be disclosed to third parties. </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne5">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne5" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">Where does Jobhub
+                          operate?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne5" class="collapse show" aria-labelledby="headingOne5"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+
+
+                        A complete list of cities is available here. </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <div class="card">
+
+                    <div class="card-head" id="headingOne6">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span class="regular-style tasker_landing_cursor__green btn-link">What categories can I task in
+                          on Jobhub?</span>
+                      </h2>
+
+                    </div>
+
+                    <div id="collapseOne6" class="collapse show" aria-labelledby="headingOne6"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        You can perform tasks
+                        in 30+ categories and employ a range of abilities every day. </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+
+
+
+
+          </div>
+          <div class="container">
+            <div class="row u-hidden--lg u-padding-top-semi align_self" style="left:35%">
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+              <hr class="tasker_landing__dot col-1">
+              <hr class="tasker_landing__horizontal_divider2 col-1 col-sm-2">
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-container">
+      <footer>
+        <div class="row social-row" style='display: none;'>
+          <div class="container--wide">
+            <span class="footer-title social-title">Follow us! We are friendly: </span>
+
+            <a class="social-link" href="http://www.facebook.com" rel="noopener" target="_blank">
+              <img alt="Facebook" data-src="img/facebook.svg" src="img/facebook.svg">
+            </a>
+            |
+            <a class="social-link" href="http://www.twitter.com" rel="noopener" target="_blank">
+              <img alt="Twitter" data-src="img/twitter.svg" src="img/twitter.svg">
+            </a>
+            |
+            <a class="social-link" href="http://www.instagram.com" rel="noopener" target="_blank">
+              <img alt="Instagram" data-src="img/instagram.svg" src="img/instagram.svg" class="footer_social">
+            </a>
+          </div>
+        </div>
+        <div class="row footer-row">
+          <div class="container--wide footer-content">
+            <div class="footer-column">
+              <span class="footer-title">Discover</span>
+              <div class="links">
+                <a class="box-no-padding" href="become-a-tasker.html">Become a Tasker</a>
+                <!--<a class="box-no-padding" href="#">Services By City</a>-->
+                <a class="box-no-padding" href="all-services.html">All Services</a>
+                <!--<a class="box-no-padding" href="#">Buy a Gift Card</a>
+<a class="box-no-padding" href="#">Elite Taskers</a>-->
+                <a class="box-no-padding" href="contact.html">Help</a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <span class="footer-title">Company</span>
+              <div class="links">
+                <a class="box-no-padding" href="about.html">About Us</a>
+                <!--<a class="box-no-padding" href="#">Careers</a>
+<a class="box-no-padding" href="#">Press</a>
+<a class="box-no-padding" href="#">Jobhub for Good</a>-->
+                <a class="box-no-padding" href="blog.html">Blog</a>
+                <a class="box-no-padding" href="terms-conditions.html">Terms and Conditions</a>
+                <a class="box-no-padding" href="privacy-policy.html">Privacy Policy</a>
+                <!--<a class="box-no-padding inline-links" href="#"> California Customer Notice </a>
+<a class="box-no-padding inline-links" href="#"> Do Not Sell My Personal Information </a>-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+    </div>
+    </div>
+    </div>
+
+
+    <style type="text/css">
+      footer .footerbar ul li a:hover {
+        text-decoration: none;
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- add javascripts -->
+
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(window).width() > 1200) {
+            // check if scroll event happened
+            if ($(document).scrollTop() >
+              50) { // check if user scrolled more than 50 from top of the browser window
+              $(".navbar-fixed-top").css("background-color", "#F4F4F4");
+              $(".navbar-fixed-top li a").css("color", "#000000");
+              // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+            } else {
+              $(".navbar-fixed-top").css("background-color", "#ffffff");
+              $(".navbar-fixed-top li a").css("color", "#000000");
+              // if not, change it back to transparent
+            }
+          }
+
+        });
+      });
+    </script>
+    <!-- Only used for Script Tutorial's Demo site. Please ignore and remove. -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#media').carousel({
+          pause: true,
+          interval: false,
+        });
+      });
+    </script>
+
+
+    <script type="text/javascript">
+      function handleSelectChange(val) {
+
+
+        if (val) { // require a URL
+          window.location = val; // redirect
+        }
+
+      }
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+      function openNav() {
+
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+
+    <script type="text/javascript" src="js/jquery.cookie.min.js"></script><!-- language -->
+    <script type="text/javascript" defer="defer">
+      //language
+      $(document).ready(function () {
+        $(".language_value").click(function () {
+          $.cookie("language", $(this).attr("value"), {
+            path: '/',
+            expires: 365
+          });
+          console.log($.cookie("language"));
+          location.reload();
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+        var rtl_arabic = $.cookie('language');
+        if (rtl_arabic == "ar") {
+
+          $('head').append('<link rel="stylesheet" href="css/rtl.css" type="text/css" />');
+
+
+        }
+      });
+    </script>
+    <!--<script src="//code.tidio.co/wg9syoaz8eczbdqcy6wqleztfujkqttw.js" async></script>-->
+
+
+
+  </body>
+
+</html>
+
+
+<script src="js/jquery-validation.js" type="text/javascript"></script>
+<script src="js/jquery-validationcode.js" type="text/javascript"></script>
+<script>
+  $(document).ready(function (jq) {
+    $("#sellerreg").validate({
+      rules: {
+        available_country: "required",
+        service: "required",
+      }
+
+    });
+  });
+</script>
+<style type="text/css">
+  .error {
+
+    color: red;
+
+  }
+</style>
+
+<style type="text/css">
+  .css-b62m3t-container {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .css-7pg0cj-a11yText {
+    z-index: 9999;
+    border: 0px none;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+  }
+
+  .css-fs4fqg-control {
+    -moz-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    min-height: 38px;
+    outline: currentcolor none 0px !important;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+  }
+
+  .css-1d8n9bt {
+    -moz-box-align: center;
+    align-items: center;
+    display: grid;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .css-qc6sy-singleValue {
+    color: rgb(51, 51, 51);
+    grid-area: 1 / 1 / 2 / 3;
+    margin-left: 2px;
+    margin-right: 2px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .css-ackcql {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    flex: 1 1 auto;
+    display: inline-grid;
+    grid-area: 1 / 1 / 2 / 3;
+    grid-template-columns: 0px min-content;
+    box-sizing: border-box;
+  }
+
+  .css-1wy0on6 {
+    -moz-box-align: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .css-tlfecz-indicatorContainer {
+    color: rgb(204, 204, 204);
+    display: flex;
+    padding: 8px;
+    transition: color 150ms ease 0s;
+    box-sizing: border-box;
+  }
+
+  .accordion {
+    margin-top: 40px;
+  }
+
+  .accordion .card {
+    border: none;
+    margin-bottom: 20px;
+  }
+
+  .accordion .card h2 {
+    background: url(img/arrow56-512.webp) no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+    cursor: pointer;
+    /*font-size: 18px;*/
+    line-height: 1.428571429;
+  }
+
+  .accordion .card h2.collapsed {
+    background-image: url(buy2jobhub/img/expand2-256.webp);
+    padding-right: 44px;
+  }
+
+  .accordion .card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .align_self {
+      left: 15% !important;
+    }
+  }
+</style>
